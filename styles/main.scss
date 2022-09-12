@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+  @apply h-full;
+}
+
+body {
+  @apply bg-blue-500;
+}
+
+.main {
+  @apply bg-blue-300 flex flex-col p-4;
+
+  @screen md {
+    @apply p-8;
+  }
+}
+
+.chat-messages {
+  @apply flex-auto overflow-y-auto pb-4 break-words;
+}
+
+.host-bar {
+  @apply bg-blue-800 flex;
+
+  input[type="button"] {
+    @apply border-r text-white border-indigo-300 p-4 bg-transparent;
+  }
+}
+
+.chat-controls {
+  @apply bg-blue-800 flex;
+
+  input {
+    height: 40px;
+
+    &.chat-controls__text {
+      @apply flex-auto px-2;
+    }
+
+    &.chat-controls__button {
+      @apply px-4;
+    }
+  }
+}
+
+.modal--hidden {
+  @apply hidden;
+}
+
+.modal--active {
+  @apply absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
